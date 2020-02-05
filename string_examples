@@ -1,0 +1,55 @@
+package scala_basics
+
+object scalaStrring extends App{
+
+   val str1 = "Mango"
+   val str2 = "mango"
+   val str3 = null
+  /*
+    1.   string  comparision examples
+    2.   str3 is null, see the effects
+   */
+
+  println ( str1 == str2)
+  // different notation
+  println(str1.eq(str2))
+  println (str1.toUpperCase() == str2.toUpperCase())
+  println ( str1 == str3)
+  //Below statement will through error toUpperCase not a member of Null
+ // println ( str1.toUpperCase() == str3.toUpperCase())
+
+  /*
+   String and  Manipulation and multiple line string manipulation
+   1. we can manipulate the string as array
+   */
+  println(str1.drop(2).take(2).capitalize)
+
+  val sentence =
+    """Mango is all indian favorite fruits
+      |Its available in summer
+      |Even lots of other fruit available in India|"""
+  println(sentence)
+ val sentence1 =
+    """Mango is all indian favorite fruits
+      |Its available in summer
+      |Even lots of other fruit available in India""".stripMargin('#')
+  println(sentence.stripMargin.replaceAll("\n","*"))
+
+  sentence.split(" ").map(_.trim).foreach(println)
+  sentence1.split("\\s+").foreach(println)
+  /*
+    Substituting Variables into Strings
+   */
+  val age = 20
+  println(s"Her age is ${age}  and mother age is ${(age * 4)/2}")
+  case class emp(name: String, deptno: Int, job: String)
+
+  val rohit = emp("Rohit",20,"Software Engineer")
+  println(s"Emp name is ${rohit.name} department is ${rohit.deptno} and job is ${rohit.job}.")
+  // If you don't put curly braces It will give wrong information
+  println(s"Emp name is $rohit.name department is $rohit.deptno and job is $rohit.job.")
+
+
+
+
+}
