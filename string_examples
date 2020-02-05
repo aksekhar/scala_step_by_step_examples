@@ -49,7 +49,37 @@ object scalaStrring extends App{
   // If you don't put curly braces It will give wrong information
   println(s"Emp name is $rohit.name department is $rohit.deptno and job is $rohit.job.")
 
+ /*
+   The f string interpolator. printf format specifier.
 
+ */
+  val weight = 30.342
+ // Check the difference in output  between s"" and f"" string interpolation
+  println(s" person age is $age and weight is $weight%.0f kg")
+  println(f" person age is $age and weight is $weight%.0f kg")
+  val str4 = f"person   weight is $weight%.4f"
+  println(str4)
+ /*
+  raw interpolator
+  Its useful when we have some string contain \t or \n
+  verify the output of  println(s"wicked\naughty") command it will come like:
+  wicked
+  aughty
+  It will consider \n from naughty as a new line.
+  */
+   println(s"wicked\naughty")
+   println(raw"wicked\naughty")
+  /*
+    Working with each letter
+   */
+  val str5 = "Person is selling book"
 
+  //for (c <- str5 ) println(c)
+
+  val newStr5 = for (c <- str5 ) yield c.toUpper
+  println(newStr5)
+
+  println(str5.map(_.toUpper))
+  
 
 }
