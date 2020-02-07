@@ -1,10 +1,10 @@
-package scala_basics
+ package scala_basics
 
 object scalaStrring extends App{
 
-   val str1 = "Mango"
-   val str2 = "mango"
-   val str3 = null
+  val str1 = "Mango"
+  val str2 = "mango"
+  val str3 = null
   /*
     1.   string  comparision examples
     2.   str3 is null, see the effects
@@ -16,7 +16,7 @@ object scalaStrring extends App{
   println (str1.toUpperCase() == str2.toUpperCase())
   println ( str1 == str3)
   //Below statement will through error toUpperCase not a member of Null
- // println ( str1.toUpperCase() == str3.toUpperCase())
+  // println ( str1.toUpperCase() == str3.toUpperCase())
 
   /*
    String and  Manipulation and multiple line string manipulation
@@ -29,7 +29,7 @@ object scalaStrring extends App{
       |Its available in summer
       |Even lots of other fruit available in India|"""
   println(sentence)
- val sentence1 =
+  val sentence1 =
     """Mango is all indian favorite fruits
       |Its available in summer
       |Even lots of other fruit available in India""".stripMargin('#')
@@ -49,26 +49,26 @@ object scalaStrring extends App{
   // If you don't put curly braces It will give wrong information
   println(s"Emp name is $rohit.name department is $rohit.deptno and job is $rohit.job.")
 
- /*
-   The f string interpolator. printf format specifier.
+  /*
+    The f string interpolator. printf format specifier.
 
- */
+  */
   val weight = 30.342
- // Check the difference in output  between s"" and f"" string interpolation
+  // Check the difference in output  between s"" and f"" string interpolation
   println(s" person age is $age and weight is $weight%.0f kg")
   println(f" person age is $age and weight is $weight%.0f kg")
   val str4 = f"person   weight is $weight%.4f"
   println(str4)
- /*
-  raw interpolator
-  Its useful when we have some string contain \t or \n
-  verify the output of  println(s"wicked\naughty") command it will come like:
-  wicked
-  aughty
-  It will consider \n from naughty as a new line.
-  */
-   println(s"wicked\naughty")
-   println(raw"wicked\naughty")
+  /*
+   raw interpolator
+   Its useful when we have some string contain \t or \n
+   verify the output of  println(s"wicked\naughty") command it will come like:
+   wicked
+   aughty
+   It will consider \n from naughty as a new line.
+   */
+  println(s"wicked\naughty")
+  println(raw"wicked\naughty")
   /*
     Working with each letter
    */
@@ -80,6 +80,11 @@ object scalaStrring extends App{
   println(newStr5)
 
   println(str5.map(_.toUpper))
-  
+
+   val res = for {
+     i <- "UNIVERSE"
+    }yield  i.toLower
+
+   println(res)
 
 }
