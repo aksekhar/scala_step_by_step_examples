@@ -76,10 +76,74 @@ object scalaNumbers {
     val fName = null.isInstanceOf[String]
     println(fName.getClass)
 
+    /*
+      Replacements for ++ and −−
+     */
+
+     var i =10
+     i += 1; i *= 2; i -= 2; i /=10
+
+    println("value of i after calc: "+i)
+    /*
+      Comparing  floating point number
+      0.2 + 0.1 = what is the value? In below example its show that its not 0.3
+      So how to compare ?
+     */
+    val j = 0.3
+    val k = 0.1 + 0.2
+    if (j == k){
+      println("equal")
+    }else {
+      println(k)
+    }
+    // Creating a function for comparing above values
+
+    def ~=(x:Double,y:Double,precision:Double) ={
+      if((x-y).abs < precision) true else false
+    }
+    println(~=(j,k,0.0001)) // approx equal
+
+    val Bint = BigInt(1232243333)
+      println(Bint+i);println(Bint.getClass);println(Bint.isValidLong)
+     val bint1 = Bint*Bint*Bint
+    //println(bint1.getClass)
+
+    val  r = scala.util.Random
+    println("Next Random value: "+r.nextInt(100))
+    var aa = 0 to r.nextInt(10)
+    println(aa)
+   val cc= for (i <- 0 to r.nextInt( 10)) yield r.nextPrintableChar()
+    println(cc)
+
+    var numRange = 1 to 10
+
+    var    numRange2 = (1 to 10 by 3).toList
+    for(i <- numRange) print(i+"\t")
+    println("\n")
+    for(i <- numRange2) print(i+"\t")
+    println("\n")
+    import scala.language.postfixOps
+    val    numRange1 = 1 to 10 by 2 toArray
+    val pi = scala.math.Pi
+    println(f"$pi/2")
+    println(s"$pi/2")
+    //Curency format
+    var formatter = java.text.NumberFormat.getIntegerInstance
+    println(formatter.format(10000000))
+      formatter = java.text.NumberFormat.getInstance()
+    println(formatter.format(100000.33))
+    val locale = new java.util.Locale("de", "DE")
+    val formatr = java.text.NumberFormat.getIntegerInstance(locale)
+    println(formatr.format(10000000))
+    formatter = java.text.NumberFormat.getCurrencyInstance
+    println(formatter.format(10000000))
+    println(formatter.format(100000.33))
+    import java.util.{Currency, Locale}
+    val de = Currency.getInstance(new Locale("de", "DE"))
+    formatter.setCurrency(de)
+    println(formatter.format(100000.33))
 
 
-
-
-  }
+     }
 
 }
